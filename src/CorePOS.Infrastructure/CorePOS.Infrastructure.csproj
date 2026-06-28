@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RootNamespace>CorePOS.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CorePOS.Application\CorePOS.Application.csproj" />
+    <ProjectReference Include="..\CorePOS.Domain\CorePOS.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- EF Core + SQL Server (from Phase 8) -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools"     Version="8.0.0" />
+
+    <!-- FastReport.Net — Main package -->
+    <PackageReference Include="FastReport.OpenSource"          Version="2024.1.0" />
+    <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2024.1.0" />
+
+    <!-- DI + Logging -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration"       Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+
+    <!-- BCrypt for passwords -->
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+
+    <!-- Barcode scanning -->
+    <PackageReference Include="ZXing.Net" Version="0.16.9" />
+
+    <!-- MediatR -->
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+</Project>

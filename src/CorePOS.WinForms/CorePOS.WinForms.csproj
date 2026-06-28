@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>CorePOS</AssemblyName>
+    <RootNamespace>CorePOS.WinForms</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <StartupObject>CorePOS.WinForms.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Application Layer + All Dependencies -->
+    <ProjectReference Include="..\CorePOS.Application\CorePOS.Application.csproj" />
+    <ProjectReference Include="..\CorePOS.Domain\CorePOS.Domain.csproj" />
+    <ProjectReference Include="..\CorePOS.Infrastructure\CorePOS.Infrastructure.csproj" />
+    <ProjectReference Include="..\CorePOS.Persistence\CorePOS.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\*.resx" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>CorePOS.Application</RootNamespace>
+    <AssemblyName>CorePOS.Application</AssemblyName>
+  </PropertyGroup>
+
+  <!-- Application depends ONLY on Domain -->
+  <ItemGroup>
+    <ProjectReference Include="..\CorePOS.Domain\CorePOS.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- CQRS mediator pattern -->
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <!-- Validation -->
+    <PackageReference Include="FluentValidation" Version="11.9.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
+    <!-- Object mapping -->
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <!-- DI extensions for AddApplication() -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+    <!-- Logging abstractions -->
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+  </ItemGroup>
+
+</Project>

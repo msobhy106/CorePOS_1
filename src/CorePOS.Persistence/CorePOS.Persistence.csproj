@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>CorePOS.Persistence</RootNamespace>
+    <AssemblyName>CorePOS.Persistence</AssemblyName>
+  </PropertyGroup>
+
+  <!-- Persistence depends on Application (implements its interfaces) -->
+  <ItemGroup>
+    <ProjectReference Include="..\CorePOS.Application\CorePOS.Application.csproj" />
+    <ProjectReference Include="..\CorePOS.Domain\CorePOS.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- EF Core SQL Server Provider -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
+    <!-- EF Core Tools for Migrations -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <!-- EF Core Design (for Add-Migration) -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <!-- DI extensions -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
